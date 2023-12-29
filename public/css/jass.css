@@ -19,6 +19,7 @@
    */
   body {
     margin: 0;
+    background-color: #C6F3CC;
   }
   
   /**
@@ -420,12 +421,12 @@
   }
   
   a {
-    color: #1b89bc;
+    color: #5C2E00;
     text-decoration: none;
   }
   
   a:hover {
-    color: #065b83;
+    color: #341B01;
     text-decoration: underline;
   }
   
