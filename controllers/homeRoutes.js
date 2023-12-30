@@ -75,8 +75,30 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
   res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
+// Registration route
+router.post('/signup', async (req, res) => {
+  try {
+
+    // Create a new user in the database
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+
+    // Redirect to login page after successful registration
+    res.redirect('/login');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 module.exports = router;
