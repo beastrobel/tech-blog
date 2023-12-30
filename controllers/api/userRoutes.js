@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  res.render('login');
+});
+
 router.post('/', async (req, res) => {
   try {
     const newUser = await User.create(req.body);
@@ -47,7 +56,6 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

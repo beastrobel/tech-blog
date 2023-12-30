@@ -7,14 +7,28 @@ header, .post:not(:last-child) {
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #5C2E00;
+    color: white;
     text-decoration: none;
     font-size: 100%;
   }
   
   .no-button:hover {
-    color: #341B01;
-    text-decoration: underline;
+    color: lightgreen;
+    text-decoration: none;
+  }
+
+  .nava{
+    color: white;
+  }
+
+  .nava:hover{
+    color: lightgreen;
+    text-decoration: none;
+  }
+
+  #navbar {
+    background-color: #341B01;
+    color: white;
   }
 
   
